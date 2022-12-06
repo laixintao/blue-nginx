@@ -1,6 +1,7 @@
 From ubuntu:20.04
 
 ARG nginx_version=1.23.2
+ARG vts_version=0.2.1
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -22,9 +23,9 @@ RUN true && \
     tar xvf nginx-source.tar.gz
 
 RUN true && \
-    curl -sS -L https://github.com/vozlt/nginx-module-vts/archive/refs/tags/v0.2.1.tar.gz -o nginx-module-vts.tar.gz && \
+    curl -sS -L https://github.com/vozlt/nginx-module-vts/archive/refs/tags/v${vts_version}.tar.gz -o nginx-module-vts.tar.gz && \
     tar xvf nginx-module-vts.tar.gz && \
-    mv /nginx-module-vts-0.2.1 /nginx-module-vts
+    mv /nginx-module-vts-${vts_version} /nginx-module-vts
 
 
 RUN mv -v /nginx-${nginx_version} /nginx-build
