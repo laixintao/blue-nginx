@@ -1,4 +1,4 @@
-From ubuntu:20.04
+FROM ubuntu:24.04
 
 ARG nginx_version=1.23.2
 ARG vts_version=0.2.1
